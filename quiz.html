@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skinly Care - Skincare Quiz</title>
+
+    <link rel="stylesheet" href="./assets/css/quiz.css">
+    <link rel="stylesheet" href="./assets/css/navBar.css">
+    <link rel="stylesheet" href="./assets/css/footer.css">
+    <link rel="stylesheet" href="assets/css/btnUP.css" />
+
+    
+
+    <link rel="stylesheet" href="../Session9/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.1.0/css/v4-shims.min.css" integrity="sha512-p++g4gkFY8DBqLItjIfuKJPFvTPqcg2FzOns2BNaltwoCOrXMqRIOqgWqWEvuqsj/3aVdgoEo2Y7X6SomTfUPA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.0/css/all.min.css" integrity="sha512-ApSLB1Pd3/bZN8fWB/RG9YhN/7bd9Hkf3AGaE2mPfebjrxagjuBtx2GcgdqIlJkUzwylBo61r9Xa9NmgBI0swA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.0/css/all.min.css" integrity="sha512-ApSLB1Pd3/bZN8fWB/RG9YhN/7bd9Hkf3AGaE2mPfebjrxagjuBtx2GcgdqIlJkUzwylBo61r9Xa9NmgBI0swA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+        <div id="navbar"></div>
+
+
+    <div class="background-decoration">
+        <div class="blob blob-one"></div>
+        <div class="blob blob-two"></div>
+        <div class="blob blob-three"></div>
+    </div>
+
+    <main class="main-wrapper">
+
+        <div class="quiz-container">
+
+            <section id="welcome-screen" class="screen welcome-screen">
+                <div class="screen-content">
+
+                    <div class="logo-wrapper">
+                        <img src="/assets/images/HOME/4cUZ5dHzVrnHsONYplnlsoA8os.avif" alt="Skinly Care Logo">
+                    </div>
+
+                    <div class="quiz-label">
+                        <i class="fa-brands fa-envira"></i>
+                        Skin Diagnostic Quiz
+                    </div>
+
+                    <h1 class="welcome-title">
+                        Discover Your Perfect Routine
+                    </h1>
+
+                    <p class="welcome-description">
+                        Answer five simple questions about your skin and discover
+                        the Skinly Care product that fits your unique needs.
+                    </p>
+
+                    <button onclick="startQuiz()" class="main-button">
+                        Start Quiz
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+
+                </div>
+            </section>
+
+
+            <section id="quiz-screen" class="screen hidden">
+                <div class="screen-content">
+
+                    <div class="quiz-header">
+                        <span id="question-counter" class="question-number">
+                            Question 1 of 5
+                        </span>
+
+                        <span id="progress-percentage" class="percentage">
+                            20%
+                        </span>
+                    </div>
+
+                    <div class="progress-wrapper">
+                        <div id="progress-bar" class="progress-bar-custom"></div>
+                    </div>
+
+                    <div id="question-area" class="question-area">
+
+                        <h2 id="question-title" class="question-title"></h2>
+
+                        <div id="options-container" class="options-container"></div>
+
+                    </div>
+
+                    <div class="navigation">
+
+                        <button id="prev-btn"
+                                onclick="prevQuestion()"
+                                class="back-button">
+                            <i class="fa-solid fa-arrow-left"></i>
+                            Back
+                        </button>
+
+                        <button id="next-btn"
+                                onclick="nextQuestion()"
+                                class="next-button"
+                                disabled>
+                            Next
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+
+                    </div>
+
+                </div>
+            </section>
+
+
+            <section id="result-screen" class="screen hidden result-screen">
+                <div class="screen-content">
+
+                    <div class="result-badge">
+                        <i class="fa-solid fa-circle-check"></i>
+                        Your Ideal Match Found
+                    </div>
+
+                    <h2 class="result-title">
+                        Your Personalized Recommendation
+                    </h2>
+
+                    <p class="result-description">
+                        Based on your answers, we found the skincare product
+                        that best matches your skin's needs.
+                    </p>
+
+                    <div id="product-result-content"></div>
+
+                    <button onclick="restartQuiz()" class="retake-button">
+                        <i class="fa-solid fa-rotate-right"></i>
+                        Retake Quiz
+                    </button>
+
+                </div>
+            </section>
+
+        </div>
+
+    </main>
+
+   <div id="site-components"></div>
+
+   <a href="#" class="scroll-top-btn">
+    <i class="fa-solid fa-arrow-up-long"></i>
+</a>
+
+<script src="./assets/js/btnUP.js"></script>
+
+
+    <script src="./assets/js/data.js"></script>
+    <script src="./assets/js/cart.js"></script>
+  <script src="./assets/js/wishlist.js"></script>
+    <script src="./assets/js/quiz.js"></script>
+    <script src="./assets/js/navBar.js"></script>
+    <script src="./assets/js/footer.js"></script>
+
+</body>
+</html>
